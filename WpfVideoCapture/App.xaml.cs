@@ -14,4 +14,5 @@ namespace WpfVideoCapture
     public partial class App : Application
     {
     }
+
 }

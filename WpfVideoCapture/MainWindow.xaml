@@ -5,8 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfVideoCapture"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
+        Title="VideoCapture" Height="600" Width="800">
+    <Window.Resources>
+        <local:VideoViewModel x:Key="VVM" ></local:VideoViewModel>
+    </Window.Resources>
+    <Grid Name="Main">
+        <Image HorizontalAlignment="Left" Height="480" Margin="86,24,0,0" VerticalAlignment="Top" Width="640" Source="{Binding Source={StaticResource VVM },Path=Source}"/>
+        <Button Content="Start" HorizontalAlignment="Left" Margin="86,533,0,0" VerticalAlignment="Top" Width="75" Command="{Binding Source={StaticResource VVM},Path=CommandStart}"/>
+        <Button Content="Stop" HorizontalAlignment="Left" Margin="180,533,0,0" VerticalAlignment="Top" Width="75" Command="{Binding Source={StaticResource VVM},Path=CommandStop}"/>
+
     </Grid>
 </Window>

@@ -20,9 +20,16 @@ namespace WpfVideoCapture
     /// </summary>
     public partial class MainWindow : Window
     {
+        VideoViewModel _VVM;
         public MainWindow()
         {
             InitializeComponent();
+            _VVM = (VideoViewModel)(this.Resources["VVM"]);
+            this.Closing += (s, e) =>
+            {
+                _VVM.Stop();
+            };
         }
+
     }
 }
